@@ -1,0 +1,1 @@
+Codigo que resuelve el diseño responsive vista mobile y desktop en el index
