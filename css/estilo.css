@@ -1,0 +1,67 @@
+.gridIndex{
+	display: grid;
+	grid-template-areas: 
+	"navIzq logo navDer"
+	"main main main"
+	"footer footer footer";
+	grid-template-columns: repeat(3, 33%);
+	grid-template-rows: repeat(3, auto);
+}
+header{grid-area: logo;}
+.navIzq{grid-area: navIzq;}
+.navDer{grid-area: navDer;}
+main{
+	grid-area: main;
+	display: grid;
+	grid-template-areas:
+	"fullWidth fullWidth fullWidth"
+	"encabezado encabezado encabezado"
+	"cardIzq cardCen cardDer"
+	"section section section"
+	"img img img";
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(5, auto);
+
+}
+.fullWidth{grid-area: fullWidth;}
+.fullWidth img{width: 100%;}
+.encabezado{grid-area: encabezado;}
+.cardIzq{grid-area: cardIzq;}
+.cardCen{grid-area: cardCen;}
+.cardDer{grid-area: cardDer;}
+section{grid-area: section;}
+.tresImg{grid-area: img;display: flex; flex-direction: row; flex-wrap: nowrap;}
+.tresImg img{width: 30%;margin: 10px;}
+footer{grid-area: footer;display: flex;justify-content: space-around;}
+.border{border: 1px solid black;}
+li{list-style-type: none;margin: 10px;}
+a{text-decoration: none; color: black; font-size: 20px;}
+ul{display: flex;}
+.cardIzq,.cardCen,.cardDer{
+	padding: 2px;
+	background-color: lightblue;
+	border-radius: 20px;
+	margin: 5px;
+}
+.encabezado h1{text-align: center;}
+/*VISTA MOBILE*/
+@media only screen and (max-width: 768px){
+	.gridIndex{
+		display: grid;
+		grid-template-areas: 
+		"logo logo"
+		"navIzq navDer"
+		"main main"
+		"footer footer";
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, auto);
+		background-color: red;
+	}
+	header{grid-area: logo;}
+	.navIzq{grid-area: navIzq;}
+	.navDer{grid-area: navDer;}
+	main{grid-area: main;}
+	footer{grid-area: footer;display: flex;flex-direction: column;}
+	.tresImg{display: none;}
+	a{color: white; font-size: 16px;}
+}
